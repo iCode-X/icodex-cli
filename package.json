@@ -1,0 +1,28 @@
+{
+  "name": "engine-x",
+  "version": "1.0.2",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "node ./dist/index.js"
+  },
+  "bin": {
+    "engine-x": "./dist/index.js"
+  },
+  "keywords": [
+    "cli",
+    "engine-x"
+  ],
+  "author": "Felix Lau",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.2"
+  }
+}
