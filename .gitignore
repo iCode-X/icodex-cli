@@ -3,11 +3,11 @@
 /node_modules
 /build
 /documentation
+openapitools.json
 
 # Logs
 logs
 *.log*
-*.md
 
 # OS
 .DS_Store

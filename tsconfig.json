@@ -1,22 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // 指定 ECMAScript 目标版本，可以根据你的需求调整
+    "declaration": false, // 是否生成 `.d.ts` 类型声明文件，可以根据需要启用
     "module": "CommonJS", // 使用 CommonJS 模块系统，Node.js 默认使用它
-    "outDir": "./dist", // 输出目录，将编译后的文件放到 dist 文件夹
-    "rootDir": "./src", // 源代码的根目录，所有 TypeScript 文件都在 src 文件夹中
+    "target": "ES2020", // 指定 ECMAScript 目标版本，可以根据你的需求调整
+    "skipLibCheck": true, // 跳过类型声明文件的类型检查，提升编译速度
+    "sourceMap": true, // 生成 source maps 以便于调试
     "strict": true, // 启用所有严格的类型检查选项
+    "useUnknownInCatchVariables": false,
+    "outDir": "./dist", // 输出目录，将编译后的文件放到 dist 文件夹
     "esModuleInterop": true, // 允许对 CommonJS 和 ES 模块进行互操作
     "forceConsistentCasingInFileNames": true, // 强制对导入的文件名大小写保持一致
-    "skipLibCheck": true, // 跳过类型声明文件的类型检查，提升编译速度
     "resolveJsonModule": true, // 允许导入 JSON 文件（比如从 package.json 中读取版本号）
-    "declaration": false, // 是否生成 `.d.ts` 类型声明文件，可以根据需要启用
-    "sourceMap": true // 生成 source maps 以便于调试
+    "types": ["node"]
   },
-  "include": [
-    "src/**/*" // 包含 src 文件夹下的所有 TypeScript 文件
-  ],
-  "exclude": [
-    "node_modules", // 排除 node_modules 文件夹
-    "dist" // 排除 dist 文件夹，防止递归编译
-  ]
+  "include": ["actions", "bin", "commands", "lib"],
+  "exclude": ["node_modules", "dist"]
 }
