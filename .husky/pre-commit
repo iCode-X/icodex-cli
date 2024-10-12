@@ -1,4 +1,9 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+email=$(git config user.email)
+domain="gmail.com"
+
+if [[ ! "$email" == *"$domain" ]]; then
+  echo "提交的邮箱不属于 $domain 域名！"
+  exit 1
+fi
 
 npx --no-install lint-staged

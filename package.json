@@ -6,7 +6,8 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "format": "prettier --write \"**/*.ts\"",
-    "start": "node ./dist/index.js"
+    "start": "node ./dist/index.js",
+    "prepare": "husky install"
   },
   "bin": {
     "imean-cli": "./dist/bin/imean-cli.js"
@@ -34,10 +35,14 @@
     "ora": "8.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.5.0",
+    "@commitlint/config-angular": "19.5.0",
     "@types/lodash": "4.17.10",
     "@types/node": "22.7.5",
+    "commitlint": "^19.5.0",
     "globals": "15.11.0",
     "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "nodemon": "3.1.7",
     "prettier": "3.3.3",
     "prettier-plugin-organize-imports": "4.1.0",
