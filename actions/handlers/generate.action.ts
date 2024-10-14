@@ -23,7 +23,7 @@ const generateFiles = async (inputs: Input[]) => {
   const appName = inputs.find(input => input.name === 'project')!.value as string;
 
   const collection: AbstractCollection = CollectionFactory.create(
-    collectionOption || configuration.collection || Collection.IMEAN
+    collectionOption || configuration.collection || Collection.ICodeX
   );
   const schematicOptions: SchematicOption[] = mapSchematicOptions(inputs);
   const configurationProjects = configuration.projects;

@@ -8,7 +8,7 @@ export interface Schematic {
   description: string;
 }
 
-export class IMeanCollection extends AbstractCollection {
+export class ICodeXCollection extends AbstractCollection {
   private static schematics: Schematic[] = [
     {
       name: 'component',
@@ -18,7 +18,7 @@ export class IMeanCollection extends AbstractCollection {
   ];
 
   constructor(runner: AbstractRunner) {
-    super('@imean/schematics', runner);
+    super('@icodex/schematics', runner);
   }
 
   public async execute(name: string, options: SchematicOption[]) {
@@ -27,11 +27,11 @@ export class IMeanCollection extends AbstractCollection {
   }
 
   public getSchematics(): Schematic[] {
-    return IMeanCollection.schematics;
+    return ICodeXCollection.schematics;
   }
 
   private validate(name: string) {
-    const schematic = IMeanCollection.schematics.find(s => s.name === name || s.alias === name);
+    const schematic = ICodeXCollection.schematics.find(s => s.name === name || s.alias === name);
 
     if (schematic === undefined || schematic === null) {
       throw new Error(`Invalid schematic "${name}". Please, ensure that "${name}" exists in this collection.`);

@@ -1,5 +1,5 @@
 {
-  "name": "imean-cli",
+  "name": "icodex-cli",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "prepare": "husky install"
   },
   "bin": {
-    "imean-cli": "./dist/bin/imean-cli.js"
+    "icodex-cli": "./dist/bin/icodex-cli.js"
   },
   "files": [
     "dist",
@@ -26,7 +26,7 @@
     "@angular-devkit/core": "17.3.8",
     "@angular-devkit/schematics": "17.3.8",
     "@angular-devkit/schematics-cli": "17.3.8",
-    "@imean/schematics": "/Users/liujingfeng/Astronix-Hub/schematics",
+    "@icodex/schematics": "/Users/liujingfeng/Astronix-Hub/schematics",
     "@openapitools/openapi-generator-cli": "2.14.0",
     "chalk": "4.1.2",
     "cli-table3": "^0.6.5",

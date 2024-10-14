@@ -11,7 +11,7 @@ import { defaultConfiguration } from './defaults';
  */
 const loadedConfigsCache = new Map<string, Required<Configuration>>();
 
-export class IMeanConfigurationLoader implements ConfigurationLoader {
+export class ICodeXConfigurationLoader implements ConfigurationLoader {
   constructor(private readonly reader: Reader) {}
 
   public load(name?: string): Required<Configuration> {
@@ -25,7 +25,7 @@ export class IMeanConfigurationLoader implements ConfigurationLoader {
 
     const contentOrError = name
       ? this.reader.read(name)
-      : this.reader.readAnyOf(['imean-cli.json', '.imeancli.json', '.imean-cli.json']);
+      : this.reader.readAnyOf(['icodex-cli.json', '.icodexcli.json', '.icodex-cli.json']);
 
     if (contentOrError) {
       const isMissingPermissionsError = contentOrError instanceof ReaderFileLackPermissionsError;
