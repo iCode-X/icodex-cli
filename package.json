@@ -1,26 +1,24 @@
 {
   "name": "icodex-cli",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "CLI tools to help developers reduce workload🍹",
+  "author": "Felix Lau",
+  "engines": {
+    "node": ">= 16.14"
+  },
+  "bin": {
+    "icodex-cli": "./dist/bin/icodex-cli.js"
+  },
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
     "format": "prettier --write \"**/*.ts\"",
     "start": "node ./dist/index.js"
   },
-  "bin": {
-    "icodex-cli": "./dist/bin/icodex-cli.js"
-  },
-  "files": [
-    "dist",
-    "templates"
-  ],
   "keywords": [
     "cli"
   ],
-  "author": "Felix Lau",
   "license": "MIT",
-  "description": "",
   "dependencies": {
     "@angular-devkit/core": "17.3.8",
     "@angular-devkit/schematics": "17.3.8",
