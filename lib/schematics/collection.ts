@@ -1,3 +1,3 @@
 export enum Collection {
-  ICodeX = '@icodex/schematics'
+  ICodeX = '@icode-x/schematics'
 }

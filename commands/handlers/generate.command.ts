@@ -95,8 +95,8 @@ export class GenerateCommand extends AbstractCommand {
   }
 
   private async getSchema(schematic: string): Promise<any> {
-    // 获取 @icodex/schematics 包的路径
-    const packagePath = require.resolve(`@icodex/schematics`);
+    // 获取 @icode-x/schematics 包的路径
+    const packagePath = require.resolve(`@icode-x/schematics`);
 
     // 构建 collection.json 的路径
     const collectionPath = path.resolve(packagePath, '../../src/collection.json');

@@ -18,7 +18,7 @@ export class ICodeXCollection extends AbstractCollection {
   ];
 
   constructor(runner: AbstractRunner) {
-    super('@icodex/schematics', runner);
+    super('@icode-x/schematics', runner);
   }
 
   public async execute(name: string, options: SchematicOption[]) {
