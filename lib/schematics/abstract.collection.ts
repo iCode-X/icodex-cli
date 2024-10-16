@@ -1,5 +1,5 @@
 import { AbstractRunner } from '../runners';
-import { Schematic } from './imean.collection';
+import { Schematic } from './icodex.collection';
 import { SchematicOption } from './schematic.option';
 
 export abstract class AbstractCollection {

@@ -14,6 +14,11 @@ export class ICodeXCollection extends AbstractCollection {
       name: 'component',
       alias: 'cmp',
       description: 'Generate a new component'
+    },
+    {
+      name: 'schema2ts',
+      alias: 's2t',
+      description: 'Convert JSON schema to TypeScript interface.'
     }
   ];
 

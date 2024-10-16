@@ -7,7 +7,7 @@ import { UnnamedDistinctQuestion } from 'inquirer/dist/commonjs/types';
 import path from 'path';
 import { AbstractCollection } from '../../lib/schematics/abstract.collection';
 import { CollectionFactory } from '../../lib/schematics/collection.factory';
-import { Schematic } from '../../lib/schematics/imean.collection';
+import { Schematic } from '../../lib/schematics/icodex.collection';
 import { loadConfiguration } from '../../lib/utils/load-configuration';
 import { AbstractCommand } from '../abstract.command';
 import { Input } from '../command.input';
