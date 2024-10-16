@@ -19,6 +19,11 @@ export class ICodeXCollection extends AbstractCollection {
       name: 'schema2ts',
       alias: 's2t',
       description: 'Convert JSON schema to TypeScript interface.'
+    },
+    {
+      name: 'openapi-gen',
+      alias: 'oag',
+      description: 'Generate code from OpenAPI spec'
     }
   ];
 

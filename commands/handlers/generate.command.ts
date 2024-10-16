@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import Table from 'cli-table3';
-import { Command } from 'commander';
+import { Command, OptionValues } from 'commander';
 import fs from 'fs';
 import inquirer from 'inquirer';
 import { UnnamedDistinctQuestion } from 'inquirer/dist/commonjs/types';
@@ -20,16 +20,37 @@ export class GenerateCommand extends AbstractCommand {
       .description(await this.buildDescription())
       .option('-p, --project [project]', 'Project in which to generate files.')
       .option('-c, --collection [collectionName]', 'Schematics collection to use.')
-      .option('--type [type]', 'Component type to generate') // 添加 type 选项
-      .action(async (schematic: string, name: string, path: string) => {
+      // generate component [name] [path] -type
+      .option('-type [type]', 'Component type to generate')
+      // generate openapi -i [inputSpec] -o [outputDir] -g [generator]
+      .option('-i [inputSpec]', 'OpenAPI specification file')
+      .option('-o [outputDir]', 'Output directory for the generated code')
+      .option('-g [generator]', 'Code generator to use', 'typescript-fetch')
+      .action(async (schematic: string, name: string, path: string, command: OptionValues) => {
         const options: Input[] = [];
         options.push({
           name: 'collection',
-          value: program.opts().collection
+          value: command.collection
         });
         options.push({
           name: 'project',
-          value: program.opts().project
+          value: command.project
+        });
+        options.push({
+          name: 'type',
+          value: command.type
+        });
+        options.push({
+          name: 'inputSpec',
+          value: command.i
+        });
+        options.push({
+          name: 'outputDir',
+          value: command.o
+        });
+        options.push({
+          name: 'generator',
+          value: command.g
         });
 
         const inputs: Input[] = [];
@@ -41,7 +62,7 @@ export class GenerateCommand extends AbstractCommand {
         const schema = await this.getSchema(schematic);
 
         // 询问缺少的必填字段
-        const missingOptions = await this.promptForMissingOptions(schema, inputs);
+        const missingOptions = await this.promptForMissingOptions(schema, inputs.concat(options));
 
         // 将结果合并到 options 中
         Object.keys(missingOptions).forEach(key => {
@@ -140,7 +161,7 @@ export class GenerateCommand extends AbstractCommand {
     // 遍历 schema 中的 properties
     for (const [key, value] of Object.entries(schema.properties) as [string, any][]) {
       // 如果当前字段没有提供且是必填项
-      if (!currentOptions.find(option => option.name === key) && schema.required?.includes(key)) {
+      if (!currentOptions.find(option => option.name === key)?.value && schema.required?.includes(key)) {
         // 检查是否有枚举选项
         if (value.enum) {
           questions.push({
