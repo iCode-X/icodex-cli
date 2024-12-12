@@ -18,8 +18,8 @@ importers:
         specifier: 17.3.8
         version: 17.3.8(chokidar@3.6.0)
       '@icode-x/schematics':
-        specifier: ^1.0.2
-        version: 1.0.2(chokidar@3.6.0)
+        specifier: ^1.0.6
+        version: 1.0.6(chokidar@3.6.0)
       '@openapitools/openapi-generator-cli':
         specifier: 2.14.0
         version: 2.14.0
@@ -205,8 +205,8 @@ packages:
     resolution: {integrity: sha512-DSHae2obMSMkAtTBSOulg5X7/z+rGLxcXQIkg3OmWvY6wifojge5uVMydfhUvs7yQj+V7jNmRZ2Xzl8GJyqRgg==}
     engines: {node: '>=v18'}
 
-  '@icode-x/schematics@1.0.2':
-    resolution: {integrity: sha512-dmZICL2XJvcSnFnwzBQUqoefGDVexFvwGctmq73ZcMFVBdI28ocM1qVhuq07BHOosvCb7l4IMujuRvSMiPmyDw==}
+  '@icode-x/schematics@1.0.6':
+    resolution: {integrity: sha512-Bwtmnu+h5wg8mdK//tZ6/8/dPIuyN5lZGNcoJc3xl+7yeQtBbz/TKOivyJHBr5Y+NubF4TDbOCjMAB15Wunj+Q==}
 
   '@inquirer/checkbox@4.0.0':
     resolution: {integrity: sha512-TNd+u1fAG8vf8YMgXzK2BI0u0xsphFv//T5rpF1eZ+8AAXby5Ll1qptr4/XVS45dvWDIzuBmmWIpVJRvnaNqzQ==}
@@ -1697,13 +1697,22 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.0
       chalk: 5.3.0
 
-  '@icode-x/schematics@1.0.2(chokidar@3.6.0)':
+  '@icode-x/schematics@1.0.6(chokidar@3.6.0)':
     dependencies:
       '@angular-devkit/core': 18.2.8(chokidar@3.6.0)
       '@angular-devkit/schematics': 18.2.8(chokidar@3.6.0)
+      '@openapitools/openapi-generator-cli': 2.14.0
       path: 0.12.7
     transitivePeerDependencies:
+      - '@nestjs/microservices'
+      - '@nestjs/platform-express'
+      - '@nestjs/websockets'
       - chokidar
+      - class-transformer
+      - class-validator
+      - debug
+      - encoding
+      - supports-color
 
   '@inquirer/checkbox@4.0.0(@types/node@22.7.5)':
     dependencies:
