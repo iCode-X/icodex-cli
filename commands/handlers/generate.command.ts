@@ -25,7 +25,7 @@ export class GenerateCommand extends AbstractCommand {
       // generate openapi -i [inputSpec] -o [outputDir] -g [generator]
       .option('-i [inputSpec]', 'OpenAPI specification file')
       .option('-o [outputDir]', 'Output directory for the generated code')
-      .option('-g [generator]', 'Code generator to use', 'typescript-fetch')
+      // .option('-g [generator]', 'Code generator to use', 'typescript-fetch')
       .action(async (schematic: string, name: string, path: string, command: OptionValues) => {
         const options: Input[] = [];
         options.push({
